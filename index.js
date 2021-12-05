@@ -9,8 +9,7 @@ const app = express();
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "root123",
-  database: "testfullstack_students", // comment out if running example 1
+  password: "root123"
 });
 
 // Establish connection with the DB
@@ -35,7 +34,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.post("/insertstudents", (req, res) => {
+app.post("/insertanswers", (req, res) => {
   let data = { name: req.body.studentName, email: req.body.studentEmail };
   let sql = `INSERT INTO students SET ?`;
   let query = db.query(sql, data, (err, result) => {
@@ -46,7 +45,7 @@ app.post("/insertstudents", (req, res) => {
   });
 });
 
-app.post("/updatestudents", (req, res) => {
+app.post("/updateanswers", (req, res) => {
   let sql = `UPDATE students SET email = '${req.body.studentNewEmailUpdate}'  WHERE id = ${req.body.studentID}`;
   db.query(sql, (err, result) => {
     if (err) {
@@ -56,7 +55,7 @@ app.post("/updatestudents", (req, res) => {
   });
 });
 
-app.post("/deletestudents", (req, res) => {
+app.post("/deleteanswers", (req, res) => {
   let sql = `DELETE FROM students WHERE email = '${req.body.studentEmail}'`;
   db.query(sql, (err, result) => {
     if (err) {
@@ -66,7 +65,7 @@ app.post("/deletestudents", (req, res) => {
   });
 });
 
-app.get("/readstudents", (req, res) => {
+app.get("/readanswers", (req, res) => {
   let sql = `SELECT * FROM students`;
   db.query(sql, (err, result) => {
     if (err) {
