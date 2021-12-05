@@ -1,5 +1,5 @@
 const express = require("express");
-//const path = require('path');
+const path = require('path');
 const mysql = require("mysql");
 const ejs = require("ejs");
 
@@ -10,10 +10,10 @@ const app = express();
 
 // Create a database connection configuration
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root123",
-  database: "mydb",
+  host: "us-cdbr-east-04.cleardb.com",
+  user: "b3822c535bff92",
+  password: "390a7ba0",
+  database: "heroku_d4debc4fa394a6f",
  // socketPath: '/var/lib/mysqld/mysqld.sock'
 });
 
