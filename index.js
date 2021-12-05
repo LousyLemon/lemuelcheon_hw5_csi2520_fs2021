@@ -10,14 +10,13 @@ const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 // Create express app
 const app = express();
 
-// Create a database connection configuration
+// Create a database connection configuration : riptutorial.com
 const db = mysql.createPool({
   connectionLimit:10,
   host: "us-cdbr-east-04.cleardb.com",
   user: "b3822c535bff92",
   password: "390a7ba0",
-  database: "heroku_d4debc4fa394a6f",
- // socketPath: '/var/lib/mysqld/mysqld.sock'
+  database: "heroku_d4debc4fa394a6f"
 });
 
 // Establish connection with the DB
@@ -35,10 +34,7 @@ db.getConnection((err) => {
     db.query("create table if not exists students (name varchar(255), email varchar(255))", function (err, result) {
       if (err) throw err;
       console.log("Table created for new session.");
-    });
-
-    
-    
+    });    
   }
 });
 
