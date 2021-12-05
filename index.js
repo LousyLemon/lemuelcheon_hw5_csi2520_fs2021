@@ -14,7 +14,7 @@ const db = mysql.createConnection({
   user: "root",
   password: "root123",
   database: "mydb",
-  socketPath: '/var/run/mysqld/mysqld.sock'
+  socketPath: '/var/lib/mysqld/mysqld.sock'
 });
 
 // Establish connection with the DB
