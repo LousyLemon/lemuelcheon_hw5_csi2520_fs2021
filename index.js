@@ -14,7 +14,7 @@ const db = mysql.createConnection({
   user: "root",
   password: "root123",
   database: "mydb",
-  socketPath: '/var/lib/mysqld/mysqld.sock'
+ // socketPath: '/var/lib/mysqld/mysqld.sock'
 });
 
 // Establish connection with the DB
@@ -100,4 +100,6 @@ app.get("/readanswers", (req, res) => {
 
 // Setup server ports
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}.`)
+});
