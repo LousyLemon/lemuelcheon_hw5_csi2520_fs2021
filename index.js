@@ -1,14 +1,7 @@
 const express = require("express");
-const path = require('path')
-//const mysql = require("mysql");
+const mysql = require("mysql");
 const ejs = require("ejs");
-const { Pool } = require('pg');
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
+
 const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
 // Create express app
@@ -28,24 +21,22 @@ db.connect((err) => {
     throw err;
   } else {
     console.log(`Successfully connected to db...`);
-    
+    db.query("CREATE DATABASE if not exists mydb", function (err, result) {
+      if (err) throw err;
+      console.log("Database created");
+      });
     db.query("drop table if exists students", function (err, result) {
       if (err) throw err;
       console.log("Table cleared for new session.");
     });
+    
     db.query("create table students (name varchar(255), email varchar(255))", function (err, result) {
       if (err) throw err;
       console.log("Table created for new session.");
     });
-    /*con.query("CREATE DATABASE mydb", function (err, result) {
-    if (err) throw err;
-    console.log("Database created");
-    });
-    var sql = "create table students (name varchar(255), email varchar(255))";
-    db.query(sql, function (err, result) {
-      if (err) throw err;
-      console.log("Table created");
-    });*/
+
+    
+    
   }
 });
 
@@ -84,12 +75,12 @@ app.post("/updateanswers", (req, res) => {
 });
 
 app.post("/deleteanswers", (req, res) => {
-  let sql = `DELETE * FROM students`; //WHERE email = '${req.body.studentEmail}'`;
+  let sql = `DELETE FROM students WHERE email = '${req.body.studentEmail}'`;
   db.query(sql, (err, result) => {
     if (err) {
       throw err;
     }
-    res.send(`student entries deleted from db...`);
+    res.send(`student entry deleted from db...`);
   });
 });
 
