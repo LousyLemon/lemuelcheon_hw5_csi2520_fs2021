@@ -2,7 +2,7 @@ const express = require("express");
 const path = require('path');
 const mysql = require("mysql");
 const ejs = require("ejs");
-const dbConfig = require("/views/db.config.js");
+const dbConfig = require("./views/db.config");
 
 var connection = mysql.createPool({
   host: dbConfig.HOST,
