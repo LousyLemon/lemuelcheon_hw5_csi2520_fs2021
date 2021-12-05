@@ -18,7 +18,16 @@ db.connect((err) => {
   if (err) {
     throw err;
   } else {
-    console.log(`Successful connected to the DB....`);
+    console.log(`Successfully connected to db...`);
+    
+    db.query("drop table if exists students", function (err, result) {
+      if (err) throw err;
+      console.log("Table cleared for new session.");
+    });
+    db.query("create table students (name varchar(255), email varchar(255))", function (err, result) {
+      if (err) throw err;
+      console.log("Table created for new session.");
+    });
     /*con.query("CREATE DATABASE mydb", function (err, result) {
     if (err) throw err;
     console.log("Database created");
@@ -66,12 +75,12 @@ app.post("/updateanswers", (req, res) => {
 });
 
 app.post("/deleteanswers", (req, res) => {
-  let sql = `DELETE FROM students WHERE email = '${req.body.studentEmail}'`;
+  let sql = `DELETE * FROM students`; //WHERE email = '${req.body.studentEmail}'`;
   db.query(sql, (err, result) => {
     if (err) {
       throw err;
     }
-    res.send(`student entry was deleted in the db...`);
+    res.send(`student entries deleted from db...`);
   });
 });
 
