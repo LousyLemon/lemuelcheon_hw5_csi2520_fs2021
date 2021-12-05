@@ -32,7 +32,7 @@ db.getConnection((err) => {
       console.log("Table cleared for new session.");
     });
     
-    db.query("create table if exists not students (name varchar(255), email varchar(255))", function (err, result) {
+    db.query("create table if not exists students (name varchar(255), email varchar(255))", function (err, result) {
       if (err) throw err;
       console.log("Table created for new session.");
     });
