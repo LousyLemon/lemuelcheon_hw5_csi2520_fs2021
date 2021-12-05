@@ -3,7 +3,7 @@ const path = require('path');
 const mysql = require("mysql");
 const ejs = require("ejs");
 
-const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
+//const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
 // Create express app
 const app = express();
