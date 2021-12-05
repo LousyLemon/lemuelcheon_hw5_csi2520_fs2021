@@ -23,10 +23,7 @@ db.connect((err) => {
     throw err;
   } else {
     console.log(`Successfully connected to db...`);
-    db.query("CREATE DATABASE if not exists mydb", function (err, result) {
-      if (err) throw err;
-      console.log("Database created");
-      });
+    
     db.query("drop table if exists students", function (err, result) {
       if (err) throw err;
       console.log("Table cleared for new session.");
