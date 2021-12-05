@@ -13,7 +13,8 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "root123",
-  database: "mydb"
+  database: "mydb",
+  socketPath: '/var/run/mysqld/mysqld.sock'
 });
 
 // Establish connection with the DB
