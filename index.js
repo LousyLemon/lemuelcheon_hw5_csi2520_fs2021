@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require('path');
+//const path = require('path');
 const mysql = require("mysql");
 const ejs = require("ejs");
 
@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true })); // to parse HTML form data
 
 // Initialize ejs Middleware
 app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, 'views'));
+//app.set('views', path.join(__dirname, 'views'));
 app.use("/public", express.static(__dirname + "/public"));
 
 // routes
