@@ -1,6 +1,15 @@
 const express = require("express");
-const mysql = require("mysql");
+const path = require('path')
+//const mysql = require("mysql");
 const ejs = require("ejs");
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
 // Create express app
 const app = express();
