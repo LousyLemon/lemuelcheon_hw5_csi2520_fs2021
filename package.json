@@ -1,9 +1,11 @@
 {
   "name": "lemuelcheon-csi2520-hw5",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Trivia MCQ",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,20 @@
   "bugs": {
     "url": "https://github.com/LousyLemon/lemuelcheon_hw5_csi2520_fs2021/issues"
   },
-  "homepage": "https://github.com/LousyLemon/lemuelcheon_hw5_csi2520_fs2021#readme"
+  "homepage": "https://github.com/LousyLemon/lemuelcheon_hw5_csi2520_fs2021#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ]
 }
