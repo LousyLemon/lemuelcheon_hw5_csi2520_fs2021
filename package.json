@@ -27,7 +27,10 @@
   "engines": {
     "node": "16.x"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "got": "^11.3.0",
+    "tape": "^4.7.0"
+  },
   "keywords": [
     "node",
     "heroku",
