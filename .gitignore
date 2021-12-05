@@ -1,6 +1,13 @@
-/node_modules
-npm_debug.log
+# Node build artifacts
+node_modules
+npm-debug.log
+
+#Local environment
+*.env
+*.dev
 .DS_Store
-/*.env
+
+# Docker
+Dockerfile
+docker-compose.yml
 *.ini
-package.lock.json
