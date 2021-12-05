@@ -26,12 +26,12 @@ db.getConnection((err) => {
   } else {
     console.log(`Successfully connected to db...`);
     
-    db.query("drop table if exists students", function (err, result) {
+    db.query("drop table if exists user_answers", function (err, result) {
       if (err) throw err;
       console.log("Table cleared for new session.");
     });
     
-    db.query("create table if not exists students (name varchar(255), email varchar(255))", function (err, result) {
+    db.query("create table if not exists user_answers (q1 varchar(255), q2 varchar(255), q3 varchar(255), q4 varchar(255), q5 varchar(255), q6 varchar(255))", function (err, result) {
       if (err) throw err;
       console.log("Table created for new session.");
     });    
@@ -54,8 +54,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/insertanswers", (req, res) => {
-  let data = { name: req.body.studentName, email: req.body.studentEmail };
-  let sql = `INSERT INTO students SET ?`;
+  let data = { q1: req.body.q1, q2: req.body.q2, 
+  q3: req.body.q3, q4: req.body.q4,
+  q5: req.body.q5, q6: req.body.q6 };
+  let sql = `INSERT INTO user_answers SET ?`;
   let query = db.query(sql, data, (err, result) => {
     if (err) {
       throw err;
@@ -65,7 +67,7 @@ app.post("/insertanswers", (req, res) => {
 });
 
 app.post("/updateanswers", (req, res) => {
-  let sql = `UPDATE students SET email = '${req.body.studentNewEmailUpdate}'  WHERE id = ${req.body.studentID}`;
+  let sql = `UPDATE user_answers SET email = '${req.body.studentNewEmailUpdate}'  WHERE id = ${req.body.studentID}`;
   db.query(sql, (err, result) => {
     if (err) {
       throw err;
