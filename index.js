@@ -9,7 +9,8 @@ const app = express();
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "root123"
+  password: "root123",
+  database: "mydb"
 });
 
 // Establish connection with the DB
@@ -18,6 +19,15 @@ db.connect((err) => {
     throw err;
   } else {
     console.log(`Successful connected to the DB....`);
+    /*con.query("CREATE DATABASE mydb", function (err, result) {
+    if (err) throw err;
+    console.log("Database created");
+    });
+    var sql = "create table students (name varchar(255), email varchar(255))";
+    db.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log("Table created");
+    });*/
   }
 });
 
