@@ -2,6 +2,16 @@ const express = require("express");
 const path = require('path');
 const mysql = require("mysql");
 const ejs = require("ejs");
+const dbConfig = require("/views/db.config.js");
+
+var connection = mysql.createPool({
+  host: dbConfig.HOST,
+  user: dbConfig.USER,
+  password: dbConfig.PASSWORD,
+  database: dbConfig.DB
+});
+
+module.exports = connection;
 
 //const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
@@ -9,7 +19,7 @@ const ejs = require("ejs");
 const app = express();
 
 // Create a database connection configuration
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: "us-cdbr-east-04.cleardb.com",
   user: "b3822c535bff92",
   password: "390a7ba0",
