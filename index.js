@@ -77,7 +77,7 @@ app.post("/updateanswers", (req, res) => {
 });
 
 app.post("/deleteanswers", (req, res) => {
-  let sql = `DELETE FROM students WHERE email = '${req.body.studentEmail}'`;
+  let sql = `DELETE FROM user_answers WHERE email = '${req.body.studentEmail}'`;
   db.query(sql, (err, result) => {
     if (err) {
       throw err;
@@ -87,7 +87,7 @@ app.post("/deleteanswers", (req, res) => {
 });
 
 app.get("/readanswers", (req, res) => {
-  let sql = `SELECT * FROM students`;
+  let sql = `SELECT * FROM user_answers`;
   db.query(sql, (err, result) => {
     if (err) {
       throw err;
