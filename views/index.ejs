@@ -19,20 +19,9 @@
     <div class="container">
       <main>
         <h2 class="title">
-          This page contains the demo of the four CRUD operations executed
-          against a Full Stack Web App
+          This page contains 6 Trivia MCQ's!
         </h2>
-        <p>The application was created using the following technologies</p>
-        <ul class="list-group">
-          <li class="list-group-item">Front End -- HTML, CSS, Vanilla JS</li>
-          <li class="list-group-item">
-            Back End -- Node.js with server-side framework express.js and
-            embedded javascript for server side content rendering
-          </li>
-          <li class="list-group-item">
-            Database -- MySQL server community edition version 8.0
-          </li>
-        </ul>
+        
       </main>
     </div>
 
@@ -46,66 +35,66 @@
           method="post"
           id="CRUDcreate"
         >
-          <label for="q1">How long is an Olympic swimming pool (meters)?: </label>
+          <label for="q1">How long is an Olympic swimming pool (meters)?: [a.50]    [b.25]    [c.66]    [d.12] </label>
           <input
             type="text"
             name="q1"
-            placeholder="Enter your number"
+            placeholder="Enter a, b, c, or d"
             size="200"
             required
             autocomplete="off"
             class="form-control mr-2"
           />
           <br />
-          <label for="q2">What does www stand for in a website brower?: </label>
+          <label for="q2">What does www stand for in a website brower?: [a.world wide web]    [b.western wide web] </label>
           <input
             type="text"
             name="q2"
-            placeholder="Enter your answer"
+            placeholder="Enter a, or b"
             size="200"
             required
             autocomplete="off"
             class="form-control mr-2"
           />
           <br />
-          <label for="q3">What geometric shape is generally used for stop signs?: </label>
+          <label for="q3">What geometric shape is generally used for stop signs?: [a.square]    [b.triangle]    [c.octagon] </label>
           <input
             type="text"
             name="q3"
-            placeholder="Enter your shape"
+            placeholder="Enter a, b, or c"
             size="200"
             required
             autocomplete="off"
             class="form-control mr-2"
           />
           <br />
-          <label for="q4">What is cynophobia?: </label>
+          <label for="q4">What is cynophobia?: [a.fear of odd things]     [b.fear of dogs]    [c.fear of butterflies] </label>
           <input
             type="text"
             name="q4"
-            placeholder="Enter the phobia"
+            placeholder="Enter a, b, or c"
             size="200"
             required
             autocomplete="off"
             class="form-control mr-2"
           />
           <br />
-          <label for="q5">Which company created the iPhone?: </label>
+          <label for="q5">Which company created the iPhone?: [a.Apple]    [b.Samsung]   [c.Google] </label>
           <input
             type="text"
             name="q5"
-            placeholder="Enter your company"
+            placeholder="Enter a, b, or c"
             size="200"
             required
             autocomplete="off"
             class="form-control mr-2"
           />
           <br />
-          <label for="q6">What is the name of the largest ocean on Earth?: </label>
+          <label for="q6">What is the name of the largest ocean on Earth?: [a.Pacific]     [b.Atlantic]    [c.Indian]    [d.Southern] </label>
           <input
             type="text"
             name="q6"
-            placeholder="Enter your ocean"
+            placeholder="Enter a, b, c, or d"
             size="200"
             required
             autocomplete="off"
@@ -172,8 +161,8 @@
     </div>
 
     <div class="container">
-      <h3>CRUD ops - DELETE</h3>
-      <h4>delete Data into The Database</h4>
+      <h3>Reset all answers</h3>
+      <h4>delete Data in the Database</h4>
       <div id="main" class="card card-body">
         <form
           action="/deleteanswers"
@@ -181,19 +170,10 @@
           id="CRUDdelete"
           class="form-inline mb-3"
         >
-          <label for="studentEmail">Confirm Student Email For deletion: </label>
-          <input
-            type="text"
-            name="studentEmail"
-            placeholder="Enter your Email"
-            size="200"
-            required
-            autocomplete="off"
-            class="form-control mr-2"
-          />
+          <label for="deleteanswers">Are you sure you want to start over? </label>
+          
           <br />
-          <input type="submit" value="SUBMIT" class="btn btn-dark" />
-          <input type="reset" value="RESET" class="btn btn-dark" />
+          <input type="Restart" value="SUBMIT" class="btn btn-dark" />
         </form>
       </div>
     </div>

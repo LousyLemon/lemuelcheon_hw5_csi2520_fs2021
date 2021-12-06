@@ -77,12 +77,12 @@ app.post("/updateanswers", (req, res) => {
 });
 
 app.post("/deleteanswers", (req, res) => {
-  let sql = `DELETE FROM user_answers WHERE email = '${req.body.studentEmail}'`;
+  let sql = `DELETE FROM user_answers`;
   db.query(sql, (err, result) => {
     if (err) {
       throw err;
     }
-    res.send(`student entry deleted from db...`);
+    res.send(`User entries deleted from db...`);
   });
 });
 
