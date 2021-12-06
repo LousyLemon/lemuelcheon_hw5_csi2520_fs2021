@@ -65,7 +65,7 @@ app.post("/insertanswers", (req, res) => {
     res.send(`student entry was inserted to the db...`);
   });
 });
-
+/*
 app.post("/updateanswers", (req, res) => {
   let sql = `UPDATE user_answers SET email = '${req.body.studentNewEmailUpdate}'  WHERE id = ${req.body.studentID}`;
   db.query(sql, (err, result) => {
@@ -75,7 +75,7 @@ app.post("/updateanswers", (req, res) => {
     res.send(`student entry was updated in the db...`);
   });
 });
-
+*/
 app.post("/deleteanswers", (req, res) => {
   let sql = `DELETE FROM user_answers`;
   db.query(sql, (err, result) => {
